@@ -87,9 +87,11 @@ const resizer = async (data) => {
 }
 
 /**
- * image resizer, resize the image into 2 size:
- *      small: 50 * 50 
- *      medium: 200 * 200
+ * format a S3 link based on the input
+ * @param {string} region - name of the region 
+ * @param {string} bucketName - name of the bucket
+ * @param {string} key - key of the file, like filename
+ * @returns a S3 link 
  */
 const formatURL = (region, bucketName, key) => {
     return `https://s3-${region}.amazonaws.com/${bucketName}/${key}`
